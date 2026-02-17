@@ -28,24 +28,32 @@ public class TaskController {
         return service.getAll();
 
     }
-//    @GetMapping("/{id}")
-//    public void getById(@PathVariable Long id){
-//        service.getById(id);
-//    }
-//    @PutMapping("/{id}")
-//    public void update(@PathVariable long id, @Valid @RequestBody TaskRequest request){
-//        service.update(id, request);
-//    }
-//    @DeleteMapping("/{id}")
-//    public void delete(@PathVariable Long id){
-//         service.delete(id);
-//    }
+    @GetMapping("/{id}")
+    public TaskResponse getById(@PathVariable Long id) {
+        return service.getById(id);   // ← must return TaskResponse object directly
+    }
+    @PutMapping("/{id}")
+    public void update(@PathVariable long id, @Valid @RequestBody TaskRequest request){
+        service.update(id, request);
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+         service.delete(id);
+    }
+    @DeleteMapping("/")
+    public void deleteAll(){
+        service.deleteAll();
+    }
 //
 //    //Mark as complete using Patch
-//    @PatchMapping("/{id}/complete")
-//    public TaskResponse complete(@PathVariable Long id){
-//        return service.complete(id);
-//    }
+    @PatchMapping("/{id}/complete")
+    public void markAsComplete(@PathVariable Long id){
+        service.markAsComplete(id, true);
+    }
+
+
+
+
 
 
 
