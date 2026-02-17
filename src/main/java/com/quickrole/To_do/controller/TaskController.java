@@ -48,7 +48,7 @@ public class TaskController {
 //    //Mark as complete using Patch
     @PatchMapping("/{id}/complete")
     public void markAsComplete(@PathVariable Long id){
-        service.markAsComplete(id, true);
+        service.markAsComplete(id, false);
     }
 
 
