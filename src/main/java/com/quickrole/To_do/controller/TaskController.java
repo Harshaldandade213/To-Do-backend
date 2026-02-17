@@ -27,7 +27,7 @@ public class TaskController {
     public List<Task> getAll() {
         return service.getAll();
 
-//    }
+    }
 //    @GetMapping("/{id}")
 //    public void getById(@PathVariable Long id){
 //        service.getById(id);
@@ -48,5 +48,5 @@ public class TaskController {
 //    }
 
 
-    }
+
 }
